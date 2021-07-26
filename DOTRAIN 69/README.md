@@ -1,0 +1,1 @@
+__init__.py là file phải có trong các package, file này sẽ được gọi ra đầu tiên khi package đó được import. Nếu trong 1 packages có chưa nhiều packages thì mỗi package sẽ chứa 1 file __init__.py của riêng nó.

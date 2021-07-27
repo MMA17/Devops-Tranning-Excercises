@@ -1,6 +1,6 @@
 import util
 
-def main() -> None:
+def main():
     util.require(util.house)
 
 if __name__ == '__main__':

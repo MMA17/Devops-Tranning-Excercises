@@ -1,0 +1,15 @@
+[Unit]
+Description=Ping google
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /home/viet/main.py
+WorkingDirectory=/home/viet
+StandardOutput=file:/home/viet/out.log
+StandardError=file:/home/viet/err.log
+User=viet
+
+[Install]
+WantedBy=multi-user.target
+

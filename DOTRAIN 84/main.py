@@ -19,5 +19,5 @@ if __name__ == '__main__':
     # Global Exception
     except KeyboardInterrupt:
         print("Ngat chuong trinh")
-    except:
+    except Exception:
         print("Another Exception")

@@ -31,6 +31,6 @@ def get_content(url):
 
 
 def get_all_content(urls):
-    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=9) as executor:
         executor.map(get_content, urls)
 

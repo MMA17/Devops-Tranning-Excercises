@@ -12,6 +12,8 @@ Mô hình của ansible khác gì với mô hình của saltstack?
         - hoạt động độc lập, giao tiếp với các server để cấu hình thông qua ssh port 22
         - Xác thực thông qua ssh key 
 
+        Mô hình của Salt Stack là Master - Agent còn Ansible là Agentless.
+
 Các thành phần trong ansible ?
 
     1, File định nghĩa các host theo group
@@ -32,5 +34,7 @@ Các cách để debug ansible ?
 
     - Sử dụng module debug để in ra các biến trong playbook 
     - Enable log_path trong ansible config để lưu log ra file
+    - sử  dụng flag -vvv trong quá trình chạy để in ra nhiều thông tin hơn
+    - sử dụng flag -e để ghi đè các biến được truyền vào trong chương trình
 
 

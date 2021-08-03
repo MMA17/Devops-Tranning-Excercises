@@ -1,0 +1,7 @@
+mysql_db_name: testdb
+mysql_db_collation: utf8mb4_unicode_ci
+mysql_db_encoding: utf8mb4
+mysql_user_name: hoangviet
+mysql_user_host: localhost
+mysql_user_password: "123456"
+mysql_user_priv: "*.*:ALL"

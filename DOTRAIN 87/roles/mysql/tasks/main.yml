@@ -1,0 +1,37 @@
+- name: Check Mysql da cai dat chua
+  stat: path=/etc/init.d/mysql
+  register: mysql_installed
+
+- name: Cai dat Mysql
+  apt:
+    name: "mysql-server"
+    state: present
+  when: not mysql_installed.stat.exists
+
+- name: Khoi dong lai MySql 
+  service: 
+    name: "mysql"
+    state: restarted
+
+- name: Cai dat pip module
+  apt: 
+    name: "python3-pip"
+    state: present
+
+- name: Cai dat MySQL-python module
+  become: yes
+  pip:
+    name: pymysql
+
+- name: Tao Database
+  mysql_db:
+    name: "{{ mysql_db_name }}"
+    collation: "{{ mysql_db_collation }}"
+    encoding: "{{ mysql_db_encoding }}"
+
+- name: Tao User
+  mysql_user:
+    name: "{{ mysql_user_name }}"
+    host: "{{ mysql_user_host }}"
+    password: "{{ mysql_user_password }}"
+    priv: "{{ mysql_user_priv }}"

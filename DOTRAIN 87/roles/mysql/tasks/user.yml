@@ -1,0 +1,12 @@
+- name: Tao User
+  mysql_user:
+    name: "{{ mysql_user_name }}"
+    host: "{{ mysql_user_host }}"
+    password: "{{ mysql_user_password }}"
+    priv: "{{ mysql_user_priv }}"
+
+# - name: Xoa User
+#   mysql_user:
+#     name: "{{ mysql_user_name }}"
+#     host: "{{ mysql_user_host }}"
+#     state: absent

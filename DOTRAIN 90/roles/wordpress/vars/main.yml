@@ -1,0 +1,9 @@
+root_document: "/var/www/html"
+
+mysql_db_name: testdb
+mysql_db_collation: utf8_unicode_ci
+mysql_db_encoding: utf8
+
+mysql_user_name: hoangviet
+mysql_user_host: localhost
+mysql_user_password: "123456"

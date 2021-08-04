@@ -1,0 +1,4 @@
+- name: Cau hinh Wordpress
+  template:
+    src: ../templates/wp-config.php.j2
+    dest: /var/www/html/wp-config.php

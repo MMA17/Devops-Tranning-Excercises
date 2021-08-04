@@ -1,0 +1,5 @@
+- name: Cai dat php
+  apt:
+    name: "{{ php_packages }}"
+    state: present
+  notify: khoi dong lai apache

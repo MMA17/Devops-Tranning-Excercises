@@ -1,0 +1,10 @@
+- name: Kiem tra xem da cai Wordpress chua
+  stat: path="{{ root_document }}"
+  register: wp_installed
+
+- name: Cai dat Wordpress
+  synchronize:
+    src: ../files/wordpress/
+    dest: "{{ root_document }}"
+  when: not wp_installed
+  notify: khoi dong lai apache

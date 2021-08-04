@@ -1,0 +1,4 @@
+- name: khoi dong lai apache
+  service:
+    name: apache2
+    state: restarted 

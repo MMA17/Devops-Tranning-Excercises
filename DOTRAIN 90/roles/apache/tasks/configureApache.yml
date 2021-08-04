@@ -1,0 +1,40 @@
+- name: Cau hinh global config Apache
+  template:
+    src: ../templates/apache2.conf.j2
+    dest: /etc/apache2/apache2.conf.j2
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Cau hinh site config
+  template:
+    src: ../templates/000-default.conf.j2
+    dest: /etc/apache2/sites-available/000-default.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Cau hinh site config
+  template:
+    src: ../templates/default-ssl.conf.j2
+    dest: /etc/apache2/sites-available/default-ssl.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Chinh sua file index
+  copy:
+    src: ../files/dir.conf
+    dest: /etc/apache2/mods-enabled/dir.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Cau hinh port Apache
+  template:
+    src: ../templates/ports.conf.j2
+    dest: /etc/apache2/ports.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: khoi dong lai apache

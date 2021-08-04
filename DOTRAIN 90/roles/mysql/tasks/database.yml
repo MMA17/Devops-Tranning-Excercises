@@ -1,0 +1,10 @@
+- name: Tao Database
+  mysql_db:
+    name: "{{ mysql_db_name }}"
+    collation: "{{ mysql_db_collation }}"
+    encoding: "{{ mysql_db_encoding }}"
+
+# - name: Xoa Database
+#   mysql_db:
+#     name: "{{ mysql_db_name }}"
+#     state: absent

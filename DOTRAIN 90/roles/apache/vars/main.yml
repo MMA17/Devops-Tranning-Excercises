@@ -1,0 +1,14 @@
+# apache2.conf
+apache_timeout: 300
+apache_keepAlive: "on"
+apache_MaxKeepAliveRequests: 100
+apache_KeepAliveTimeout: 5
+
+# ports.conf
+apache_port: 80
+apache_https_port: 443
+
+# 000-default.conf
+root_document: "/var/www/html"
+
+# defaul-ssl.conf

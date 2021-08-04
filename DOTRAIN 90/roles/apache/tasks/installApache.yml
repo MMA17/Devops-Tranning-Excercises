@@ -1,0 +1,10 @@
+- name: Kiem tra xem Apache duoc cai chua
+  stat: path=/usr/sbin/apache2
+  register: apache_installed
+
+- name: Cai dat Apache2
+  apt:
+    name: apache2
+    state: present
+  when: not apache_installed
+  notify: khoi dong lai apache

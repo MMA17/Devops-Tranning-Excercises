@@ -2,7 +2,7 @@ apache_create_vhosts: true
 apache_global_vhost_settings: |
   DirectoryIndex index.php index.html
 
-mysql_root_password: super-secure-password
+mysql_root_password: 123456
 mysql_databases:
   - name: wordpress
     encoding: utf8

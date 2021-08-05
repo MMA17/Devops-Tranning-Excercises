@@ -1,0 +1,37 @@
+apache_create_vhosts: true
+apache_global_vhost_settings: |
+  DirectoryIndex index.php index.html
+
+mysql_root_password: super-secure-password
+mysql_databases:
+  - name: wordpress
+    encoding: utf8
+    collation: utf8_unicode_ci
+
+mysql_users:
+  - name: wordpressuser
+    host: "localhost"
+    password: 123456
+    priv: "wordpress.*:ALL"
+
+wordpress_installs:
+      - name: wordpress
+        dbname: wordpress
+        dbuser: wordpressuser
+        dbpass: '123456'
+        dbhost: localhost
+        path: /var/www/html
+        title: wordpress
+        admin_name: admin
+        admin_email: root@localhost.localdomain
+        admin_password: 'tuFr8=aPra@a'
+        themes:
+          - name: twentytwelve
+            activate: true
+          - name: twentythirteen
+        plugins:
+          - name: contact-form-7
+            activate: false
+        users: {}
+        options: []
+        queries: []

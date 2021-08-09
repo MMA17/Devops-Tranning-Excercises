@@ -1,5 +1,4 @@
 from ansible.module_utils.basic import *
-
 from ansible_vault import Vault
 
 

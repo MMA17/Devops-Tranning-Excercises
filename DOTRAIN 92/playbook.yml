@@ -1,0 +1,12 @@
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: Test that my change_version module works
+    vault3: 
+      path: "/home/viet/Desktop/main.yml"
+      secret:  "./password.txt"
+      type: "decrypt"
+      msgg: "aaaaa"
+    register: result
+  - debug: var=result
+

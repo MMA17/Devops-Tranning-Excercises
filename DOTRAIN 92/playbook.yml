@@ -4,7 +4,7 @@
   tasks:
   - name: Encrypt/Decrypt File
     vault: 
-      path: "../main.yml"
+      path: "./main.yml"
       secret:  "123456"
       type: "decrypt"
       msg: ""

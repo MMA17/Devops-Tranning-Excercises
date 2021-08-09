@@ -6,7 +6,7 @@
     vault: 
       path: "./main.yml"
       secret:  "123456"
-      type: "decrypt"
+      type: "encrypt"
       msg: ""
     register: result
   - debug: var=result

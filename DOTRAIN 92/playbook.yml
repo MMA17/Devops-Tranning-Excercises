@@ -1,12 +1,13 @@
 - hosts: localhost
   become: yes
+  become_user: root
   tasks:
   - name: Encrypt/Decrypt File
     vault: 
-      path: "/home/viet/Desktop/main.yml"
-      secret:  "./password.txt"
+      path: "../main.yml"
+      secret:  "123456"
       type: "decrypt"
-      msg: "aaaaa"
+      msg: ""
     register: result
   - debug: var=result
 

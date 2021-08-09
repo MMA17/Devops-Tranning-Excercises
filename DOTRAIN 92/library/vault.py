@@ -1,8 +1,6 @@
-from ansible.module_utils.basic import AnsibleModule
-from ansible import constants as C
-from ansible.parsing.vault import VaultLib
-from ansible.cli import CLI
-from ansible.parsing.dataloader import DataLoader
+from ansible.module_utils.basic import *
+
+from ansible_vault import Vault
 
 
 def main():
@@ -15,20 +13,13 @@ def main():
     }
     module = AnsibleModule(argument_spec=fields)
 
-    loader = DataLoader()
-    vault_secret = CLI.setup_vault_secrets(
-        loader=loader,
-        vault_ids=C.DEFAULT_VAULT_IDENTITY_LIST
-    )
-    vault = VaultLib(vault_secret)
+    if module.params['type'] == 'decrypt':
+        mess = Vault(module.params['secret']).load_raw(module.params['path'])
+        module.params['msg'] = mess
 
     if module.params['type'] == 'encrypt':
-        vault.encrypt(open(module.params['path']).read())
-        module.params['msg'] = "encrypted"
-
-    if module.params['type'] == 'decrypt':
-        vault.decrypt(open(module.params['path']).read())
-        module.params['msg'] = "decrypted"
+        mess = Vault(module.params['secret']).dump_raw(module.params['path'])
+        module.params['msg'] = mess
 
     module.exit_json(changed=True, meta=module.params)
 

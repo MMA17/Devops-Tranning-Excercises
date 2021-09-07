@@ -4,7 +4,7 @@
 
 - name: Cai dat Mysql
   yum:
-    name: "mysql-server"
+    name: "mysql"
     state: present
   when: not mysql_installed.stat.exists
   notify: restart mysql

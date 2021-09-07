@@ -4,7 +4,7 @@
 
 - name: Cai dat Mysql
   apt:
-    name: "mysql"
+    name: "mysql-server"
     state: present
   when: not mysql_installed.stat.exists
   notify: restart mysql

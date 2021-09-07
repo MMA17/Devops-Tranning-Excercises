@@ -14,7 +14,7 @@
     name: "python3-pip"
     state: present
 
-# - name: Cai dat MySQL-python module
-#   become: yes
-#   pip:
-#     name: pymysql
+- name: Cai dat MySQL-python module
+  become: yes
+  pip:
+    name: pymysql

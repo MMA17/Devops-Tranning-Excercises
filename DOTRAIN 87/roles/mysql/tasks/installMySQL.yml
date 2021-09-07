@@ -3,14 +3,14 @@
   register: mysql_installed
 
 - name: Cai dat Mysql
-  apt:
+  yum:
     name: "mysql-server"
     state: present
   when: not mysql_installed.stat.exists
   notify: restart mysql
 
 - name: Cai dat pip module
-  apt: 
+  yum: 
     name: "python3-pip"
     state: present
 
